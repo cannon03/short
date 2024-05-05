@@ -14,7 +14,7 @@ app.get("/", async (req, res) => {
 
 app.post("/shorten", async (req, res) => {
   const url = req.body.InputURL;
-  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || null;
+  const ip = req.headers["x-forwarded-for"];
   console.log(url);
   console.log(ip);
   res.render("shorten", {
